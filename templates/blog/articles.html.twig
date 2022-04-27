@@ -1,0 +1,8 @@
+<section>
+    {% for article in articles %}
+        <article class="article">
+            <strong>{{ article.titre }}</strong> {{ article.auteur }} <a
+                    href="{{ path('article', {slug: article.titre|slug}) }}">lire</a>
+        </article>
+    {% endfor %}
+</section>
