@@ -17,6 +17,10 @@ services:
     _instanceof:
         App\Domain\Blog\ArticleDataSource\ArticleDataSourceInterface:
             tags: ['app.article_data_source']
+        App\Infra\Menu\LinksInterface:
+            tags: [ 'app.menu_link' ]
+        App\Infra\Menu\TwigExtension\MenuExtension:
+            tags: [ 'twig.extension' ]
 
     # makes classes in src/ available to be used as services
     # this creates a service per class whose id is the fully-qualified class name
@@ -32,3 +36,7 @@ services:
     App\Infra\Blog\Controller\:
         resource: '../src/Infra/Blog/Controller/'
         tags: ['controller.service_arguments']
+
+    App\Infra\Admin\Controller\:
+        resource: '../src/Infra/Admin/Controller/'
+        tags: [ 'controller.service_arguments' ]

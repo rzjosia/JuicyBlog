@@ -13,7 +13,7 @@ doctrine:
             Blog:
                 is_bundle: false
                 dir: '%kernel.project_dir%/src/Domain/Blog/Entity'
-                prefix: 'App\Domain\Entity\Entity'
+                prefix: 'App\Domain\Blog\Entity'
                 alias: Blog
 
 when@test:
