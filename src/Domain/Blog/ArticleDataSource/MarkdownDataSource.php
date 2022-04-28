@@ -38,11 +38,12 @@ class MarkdownDataSource implements ArticleDataSourceInterface
     private function parse(string $path): Article
     {
         $content = file_get_contents($path);
-
         $fileContent = htmlspecialchars_decode($this->markdownParser->transformMarkdown($content));
 
         preg_match('#<!---DataSource' . PHP_EOL . '(?<jsonContent>[\w\W]+)--->#', $fileContent, $matches);
+
         $jsonContent = '{' . str_replace(PHP_EOL . "\"", ',"', trim($matches['jsonContent'])) . '}';
+
         return $this->serializer->deserialize($jsonContent, Article::class, 'json');
     }
 }
