@@ -6,6 +6,6 @@ namespace App\Infra\Menu;
 
 interface LinksInterface
 {
-    public function getLinks(): iterable;
+    public function getLink(): array;
     public function getPriority(): int;
 }

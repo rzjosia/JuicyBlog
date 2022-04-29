@@ -25,9 +25,15 @@
         <a href="{{ path('home') }}" class="brand-logo right">JuicyBlog</a>
         <ul id="nav-mobile" class="left hide-on-med-and-down">
             {% for link in menu %}
+            {% if link.parameters is defined %}
+                <li {% if route_name == link.route %} class="active" {% endif %}><a
+                            href=" {{ path(link.route, link.parameters) }}">{{ link.label }}</a>
+                <li>
+            {% else %}
                 <li {% if route_name == link.route %} class="active" {% endif %}><a
                             href="{{ path(link.route) }}">{{ link.label }}</a>
                 <li>
+            {% endif %}
             {% endfor %}
         </ul>
     </div>

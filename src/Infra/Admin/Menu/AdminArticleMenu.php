@@ -11,15 +11,9 @@ class AdminArticleMenu implements LinksInterface
 {
     private const priority = 2;
     
-    private const menuItems = [
-        ['label' => 'Créer un article', 'route' => 'admin_articlesadmin_create_article']
-    ];
-    
-    public function getLinks(): iterable
+    public function getLink(): array
     {
-        foreach (self::menuItems as $item) {
-            yield $item;
-        }
+        return ['label' => 'Créer un article', 'route' => 'admin_articlesadmin_create_article'];
     }
     
     public function getPriority(): int

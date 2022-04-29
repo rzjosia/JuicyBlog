@@ -9,7 +9,7 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Twig\Environment;
 
-#[Route('/articles')]
+#[Route(path: '/articles', name: 'articles')]
 class Articles
 {
     public function __construct(private Environment $twig, private ArticleDataSource $articleDataSource)

@@ -15,7 +15,8 @@ class MenuExtension extends AbstractExtension implements GlobalsInterface
     {
     }
     
-    #[ArrayShape(['menu' => "array"])] public function getGlobals(): array
+    #[ArrayShape(['menu' => "array"])]
+    public function getGlobals(): array
     {
         return [
             'menu' => $this->menu->getItems()
