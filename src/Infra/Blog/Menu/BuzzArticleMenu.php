@@ -8,7 +8,7 @@ use App\Infra\Menu\LinksInterface;
 
 class BuzzArticleMenu implements LinksInterface
 {
-    private const priority = 1;
+    private const PRIORITY = 10;
     
     public function getLink(): array
     {
@@ -21,8 +21,8 @@ class BuzzArticleMenu implements LinksInterface
         ];
     }
     
-    public function getPriority(): int
+    public static function getDefaultPriority(): int
     {
-        return self::priority;
+        return self::PRIORITY;
     }
 }

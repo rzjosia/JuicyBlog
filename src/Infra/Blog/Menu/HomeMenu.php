@@ -8,15 +8,15 @@ use App\Infra\Menu\LinksInterface;
 
 class HomeMenu implements LinksInterface
 {
-    private const priority = 0;
+    private const PRIORITY = 999;
     
     public function getLink(): array
     {
         return ['label' => 'Home', 'route' => 'home'];
     }
     
-    public function getPriority(): int
+    public static function getDefaultPriority(): int
     {
-        return self::priority;
+        return self::PRIORITY;
     }
 }

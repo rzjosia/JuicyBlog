@@ -9,15 +9,15 @@ use App\Infra\Menu\MenuItem;
 
 class AdminArticleMenu implements LinksInterface
 {
-    private const priority = 2;
+    private const PRIORITY = 5;
     
     public function getLink(): array
     {
         return ['label' => 'Créer un article', 'route' => 'admin_articlesadmin_create_article'];
     }
     
-    public function getPriority(): int
+    public static function getDefaultPriority(): int
     {
-        return self::priority;
+        return self::PRIORITY;
     }
 }

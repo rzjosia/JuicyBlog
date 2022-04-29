@@ -7,5 +7,5 @@ namespace App\Infra\Menu;
 interface LinksInterface
 {
     public function getLink(): array;
-    public function getPriority(): int;
+    public static function getDefaultPriority(): int;
 }

@@ -20,15 +20,9 @@ class Menu
         $allLinks = [];
         
         foreach ($this->links as $linksByDomain) {
-            if ($linksByDomain) {
-                $allLinks[$linksByDomain->getPriority()] = $linksByDomain;
-            }
+            $allLinks[] = $linksByDomain->getLink();
         }
         
-        ksort($allLinks);
-        
-        return array_map(function (LinksInterface $linksByDomain) {
-            return $linksByDomain->getLink();
-        }, $allLinks);
+        return $allLinks;
     }
 }
